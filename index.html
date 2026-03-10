@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bottle Shoppe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <!-- LOGO: replace span below with <img src="images/logo.png" alt="The Bottle Shoppe" height="36"> when ready -->
+      <span class="nav-logo-placeholder">🍾</span>
+      <span class="nav-title">The Bottle Shoppe</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-body">
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-headline">Your neighborhood<br>liquor store.</h1>
+        <p class="hero-tagline">Curated selection, friendly service, delivered to your door.</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="inventory.html" class="btn btn-primary">Browse Inventory</a>
+          <a href="about.html" class="btn btn-outline">Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Delivery Section ── -->
+    <section class="section-blue">
+      <div class="section-inner">
+        <div class="delivery-card">
+          <div class="delivery-card-text">
+            <h2>Order for Delivery</h2>
+            <p>We deliver through DoorDash — fast, easy, right to your door.</p>
+          </div>
+          <div>
+            <!-- DOORDASH EMBED: paste DoorDash storefront embed snippet here when available -->
+            <!-- Fallback button below — replace [DOORDASH_URL] with your store link -->
+            <a href="[DOORDASH_URL]" class="btn btn-primary" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4l3 3"/>
+              </svg>
+              Order on DoorDash
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Social / Map Icons ── -->
+        <div class="social-row">
+          <span style="color:rgba(255,255,255,0.6); font-size:0.85rem; font-weight:400;">Find us:</span>
+
+          <!-- Google Maps — replace [MAPS_URL] with your Google Maps link -->
+          <a href="[MAPS_URL]" class="icon-btn" target="_blank" rel="noopener" aria-label="Google Maps">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </a>
+
+          <!-- Instagram — replace [IG_URL] with your Instagram profile URL -->
+          <a href="[IG_URL]" class="icon-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+
+          <!-- Facebook — replace [FB_URL] with your Facebook page URL -->
+          <a href="[FB_URL]" class="icon-btn" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Quick Links Section ── -->
+    <section class="section">
+      <div class="section-inner">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+
+          <div class="card-light" style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2rem;">🥃</div>
+            <h3 style="font-weight:600; font-size:1.05rem; color:#1a1a2e;">Spirits & Whiskey</h3>
+            <p style="font-size:0.88rem; color:#666; font-weight:300;">Bourbons, scotches, vodka, gin, tequila and more from top brands.</p>
+            <a href="inventory.html" class="btn btn-blue" style="margin-top:auto; width:fit-content; padding:10px 22px; font-size:0.82rem;">Shop Now</a>
+          </div>
+
+          <div class="card-light" style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2rem;">🍷</div>
+            <h3 style="font-weight:600; font-size:1.05rem; color:#1a1a2e;">Wine Selection</h3>
+            <p style="font-size:0.88rem; color:#666; font-weight:300;">Reds, whites, and rosés curated for every occasion and budget.</p>
+            <a href="inventory.html" class="btn btn-blue" style="margin-top:auto; width:fit-content; padding:10px 22px; font-size:0.82rem;">Shop Now</a>
+          </div>
+
+          <div class="card-light" style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2rem;">🍺</div>
+            <h3 style="font-weight:600; font-size:1.05rem; color:#1a1a2e;">Beer & Ciders</h3>
+            <p style="font-size:0.88rem; color:#666; font-weight:300;">Local craft beers, domestic favorites, and imported selections.</p>
+            <a href="inventory.html" class="btn btn-blue" style="margin-top:auto; width:fit-content; padding:10px 22px; font-size:0.82rem;">Shop Now</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end .page-body -->
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>The Bottle Shoppe</h4>
+        <!-- ADDRESS: replace placeholder below with actual address -->
+        <address>
+          123 Main Street<br>
+          Your City, ST 00000
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <!-- HOURS: replace placeholder below with actual store hours -->
+        <p>
+          Mon – Thu: 10am – 9pm<br>
+          Fri – Sat: 10am – 10pm<br>
+          Sunday: 11am – 8pm
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>
+          <a href="[IG_URL]" style="color:rgba(255,255,255,0.7); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Instagram</a><br>
+          <a href="[FB_URL]" style="color:rgba(255,255,255,0.7); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Bottle Shoppe. All rights reserved.</p>
+      <p>Please drink responsibly. Must be 21+ to purchase.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory — The Bottle Shoppe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <!-- LOGO: replace span below with <img src="images/logo.png" alt="The Bottle Shoppe" height="36"> when ready -->
+      <span class="nav-logo-placeholder">🍾</span>
+      <span class="nav-title">The Bottle Shoppe</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inventory.html" class="active">Inventory</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Inventory Header ── -->
+  <header class="inventory-header">
+    <div class="inventory-header-inner">
+      <div>
+        <h1>Our Inventory</h1>
+        <p>Browse our full selection of spirits, wine, and beer.</p>
+      </div>
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input
+          id="search"
+          class="search-input"
+          type="search"
+          placeholder="Search products…"
+          aria-label="Search inventory"
+          autocomplete="off"
+        >
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Product Listings ── -->
+  <main class="section">
+    <div class="section-inner">
+      <div id="inventory-root">
+        <p style="color:#aaa; font-size:0.9rem;">Loading inventory…</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>The Bottle Shoppe</h4>
+        <!-- ADDRESS -->
+        <address>
+          123 Main Street<br>
+          Your City, ST 00000
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <!-- HOURS -->
+        <p>
+          Mon – Thu: 10am – 9pm<br>
+          Fri – Sat: 10am – 10pm<br>
+          Sunday: 11am – 8pm
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>
+          <a href="[IG_URL]" style="color:rgba(255,255,255,0.7);">Instagram</a><br>
+          <a href="[FB_URL]" style="color:rgba(255,255,255,0.7);">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Bottle Shoppe. All rights reserved.</p>
+      <p>Please drink responsibly. Must be 21+ to purchase.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Bottle SVG Placeholder ──────────────────────────────────────────────
+    function bottleSVG() {
+      return `
+        <svg width="64" height="120" viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="26" y="4" width="12" height="14" rx="3" fill="#a8bdee"/>
+          <rect x="24" y="16" width="16" height="4" rx="2" fill="#8aaade"/>
+          <path d="M20 20 C14 30 12 40 12 55 L12 100 C12 108 18 114 32 114 C46 114 52 108 52 100 L52 55 C52 40 50 30 44 20 Z" fill="#b8ccf0"/>
+          <path d="M20 20 C14 30 12 40 12 55 L12 100 C12 108 18 114 32 114 C46 114 52 108 52 100 L52 55 C52 40 50 30 44 20 Z" fill="url(#bottleShine)" opacity="0.4"/>
+          <rect x="18" y="62" width="28" height="22" rx="4" fill="white" opacity="0.7"/>
+          <rect x="21" y="66" width="22" height="3" rx="1.5" fill="#8aaade"/>
+          <rect x="21" y="71" width="16" height="2" rx="1" fill="#a8bdee"/>
+          <rect x="21" y="75" width="19" height="2" rx="1" fill="#a8bdee"/>
+          <defs>
+            <linearGradient id="bottleShine" x1="20" y1="20" x2="52" y2="114" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="white"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </linearGradient>
+          </defs>
+        </svg>`;
+    }
+
+    // ── Render ──────────────────────────────────────────────────────────────
+    let allItems = [];
+
+    function renderInventory(items) {
+      const root = document.getElementById('inventory-root');
+
+      if (!items.length) {
+        root.innerHTML = `
+          <div class="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <p>No products match your search.</p>
+          </div>`;
+        return;
+      }
+
+      // Group by category
+      const groups = items.reduce((acc, item) => {
+        (acc[item.category] = acc[item.category] || []).push(item);
+        return acc;
+      }, {});
+
+      root.innerHTML = Object.entries(groups).map(([category, products]) => `
+        <div class="category-section">
+          <h2 class="category-title">${category}</h2>
+          <div class="product-grid">
+            ${products.map(item => `
+              <article class="product-card">
+                <div class="product-img-wrap">
+                  ${item.image
+                    ? `<img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='${bottleSVG().replace(/`/g, '\\`').replace(/"/g, '&quot;')}';">`
+                    : bottleSVG()
+                  }
+                </div>
+                <div class="product-body">
+                  <p class="product-name">${item.name}</p>
+                  <p class="product-size">${item.size}</p>
+                  <div class="product-footer">
+                    <span class="product-price">$${item.price.toFixed(2)}</span>
+                    <span class="badge ${item.inStock ? 'badge-in' : 'badge-out'}">
+                      ${item.inStock
+                        ? `<svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg> In Stock`
+                        : `<svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg> Out of Stock`
+                      }
+                    </span>
+                  </div>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ── Search Filter ────────────────────────────────────────────────────────
+    document.getElementById('search').addEventListener('input', function () {
+      const q = this.value.trim().toLowerCase();
+      if (!q) {
+        renderInventory(allItems);
+        return;
+      }
+      const filtered = allItems.filter(item =>
+        item.name.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q) ||
+        item.size.toLowerCase().includes(q)
+      );
+      renderInventory(filtered);
+    });
+
+    // ── Fetch Data ───────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('inventory.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(data => {
+          allItems = data;
+          renderInventory(allItems);
+        })
+        .catch(err => {
+          document.getElementById('inventory-root').innerHTML = `
+            <div class="empty-state">
+              <p>Unable to load inventory. Please try again later.</p>
+            </div>`;
+          console.error('Failed to load inventory.json:', err);
+        });
+    });
+  </script>
+
+</body>
+</html>

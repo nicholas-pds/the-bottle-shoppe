@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Vodka",
+    "name": "Tito's Handmade Vodka",
+    "size": "750ml",
+    "price": 24.99,
+    "inStock": true,
+    "image": "images/products/titos-750.png"
+  },
+  {
+    "category": "Vodka",
+    "name": "Grey Goose",
+    "size": "1L",
+    "price": 39.99,
+    "inStock": false
+  },
+  {
+    "category": "Whiskey",
+    "name": "Maker's Mark Bourbon",
+    "size": "750ml",
+    "price": 29.99,
+    "inStock": true,
+    "image": "images/products/makers-mark-750.png"
+  },
+  {
+    "category": "Whiskey",
+    "name": "Jameson Irish Whiskey",
+    "size": "1.75L",
+    "price": 44.99,
+    "inStock": true
+  },
+  {
+    "category": "Wine",
+    "name": "Kim Crawford Sauvignon Blanc",
+    "size": "750ml",
+    "price": 14.99,
+    "inStock": true,
+    "image": "images/products/kim-crawford-750.png"
+  },
+  {
+    "category": "Wine",
+    "name": "Meiomi Pinot Noir",
+    "size": "750ml",
+    "price": 16.99,
+    "inStock": false
+  }
+]
