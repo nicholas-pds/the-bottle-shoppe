@@ -93,7 +93,7 @@ img {
 .nav-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   color: var(--white);
   letter-spacing: 0.02em;
 }
@@ -136,7 +136,7 @@ img {
   background:
     linear-gradient(135deg, rgba(27, 63, 110, 0.82) 0%, rgba(45, 95, 154, 0.72) 100%),
     url('images/storefront.png') center / cover no-repeat;
-  padding: calc(var(--section-pad) + 20px) 24px var(--section-pad);
+  padding: calc(var(--section-pad) + 100px) 24px var(--section-pad);
   text-align: center;
   color: var(--white);
   overflow: hidden;
