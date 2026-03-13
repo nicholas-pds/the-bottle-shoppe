@@ -72,6 +72,9 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 /* LOGO: replace span below with <img src="images/logo.png"> when ready */
