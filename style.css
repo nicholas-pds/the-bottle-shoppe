@@ -7,9 +7,9 @@
 
 /* ── Custom Properties ── */
 :root {
-  --blue: #003698;
-  --blue-light: #0051d4;
-  --blue-dark: #002570;
+  --blue: #1B3F6E;
+  --blue-light: #2D5F9A;
+  --blue-dark: #102A4A;
   --white: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.12);
   --glass-border: rgba(255, 255, 255, 0.2);
@@ -57,7 +57,7 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(0, 54, 152, 0.75);
+  background: rgba(27, 63, 110, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -121,7 +121,7 @@ img {
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, #003698 0%, #0051d4 100%);
+  background: linear-gradient(135deg, #1B3F6E 0%, #2D5F9A 100%);
   padding: calc(var(--section-pad) + 20px) 24px var(--section-pad);
   text-align: center;
   color: var(--white);
@@ -176,7 +176,7 @@ img {
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 54, 152, 0.18);
+  box-shadow: 0 12px 40px rgba(27, 63, 110, 0.18);
 }
 
 /* Light card variant (on white background) */
@@ -184,7 +184,7 @@ img {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 54, 152, 0.1);
+  border: 1px solid rgba(27, 63, 110, 0.1);
   border-radius: var(--card-radius);
   padding: 28px;
   transition: var(--transition);
@@ -192,7 +192,7 @@ img {
 
 .card-light:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 54, 152, 0.12);
+  box-shadow: 0 12px 40px rgba(27, 63, 110, 0.12);
 }
 
 /* ── Buttons ── */
@@ -242,7 +242,7 @@ img {
 .btn-blue:hover {
   background: var(--blue-light);
   transform: scale(1.03);
-  box-shadow: 0 6px 24px rgba(0, 54, 152, 0.35);
+  box-shadow: 0 6px 24px rgba(27, 63, 110, 0.35);
 }
 
 /* ── Icon Buttons ── */
@@ -301,7 +301,7 @@ img {
 
 /* ── Hero section with gradient bg ── */
 .section-blue {
-  background: linear-gradient(135deg, #003698 0%, #0051d4 100%);
+  background: linear-gradient(135deg, #1B3F6E 0%, #2D5F9A 100%);
   color: var(--white);
   padding: var(--section-pad) 24px;
 }
@@ -357,7 +357,7 @@ img {
   width: 100%;
   padding: 14px 20px 14px 48px;
   border-radius: var(--pill-radius);
-  border: 1px solid rgba(0, 54, 152, 0.15);
+  border: 1px solid rgba(27, 63, 110, 0.15);
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   font-family: 'Poppins', sans-serif;
@@ -371,7 +371,7 @@ img {
 .search-input:focus {
   border-color: var(--blue);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(0, 54, 152, 0.12);
+  box-shadow: 0 0 0 3px rgba(27, 63, 110, 0.12);
 }
 
 .search-input::placeholder { color: #aaa; }
@@ -387,7 +387,7 @@ img {
 
 /* ── Inventory Page Header ── */
 .inventory-header {
-  background: linear-gradient(135deg, #003698 0%, #0051d4 100%);
+  background: linear-gradient(135deg, #1B3F6E 0%, #2D5F9A 100%);
   padding: calc(64px + 48px) 24px 48px;
   color: var(--white);
 }
@@ -427,7 +427,7 @@ img {
   color: var(--blue);
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid rgba(0, 54, 152, 0.12);
+  border-bottom: 2px solid rgba(27, 63, 110, 0.12);
 }
 
 /* ── Product Grid ── */
@@ -448,7 +448,7 @@ img {
 /* ── Product Card ── */
 .product-card {
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 54, 152, 0.08);
+  border: 1px solid rgba(27, 63, 110, 0.08);
   border-radius: var(--card-radius);
   overflow: hidden;
   transition: var(--transition);
@@ -458,12 +458,12 @@ img {
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 54, 152, 0.14);
-  border-color: rgba(0, 54, 152, 0.18);
+  box-shadow: 0 16px 48px rgba(27, 63, 110, 0.14);
+  border-color: rgba(27, 63, 110, 0.18);
 }
 
 .product-img-wrap {
-  background: linear-gradient(145deg, #eef2ff 0%, #dde6ff 100%);
+  background: linear-gradient(145deg, #e8f0fa 0%, #d4e3f7 100%);
   height: 180px;
   display: flex;
   align-items: center;
@@ -543,7 +543,7 @@ img {
 
 /* ── About Page ── */
 .about-header {
-  background: linear-gradient(135deg, #003698 0%, #0051d4 100%);
+  background: linear-gradient(135deg, #1B3F6E 0%, #2D5F9A 100%);
   padding: calc(64px + 64px) 24px 64px;
   text-align: center;
   color: var(--white);
@@ -590,7 +590,7 @@ img {
   border-radius: var(--card-radius);
   overflow: hidden;
   margin-bottom: 48px;
-  background: linear-gradient(135deg, #dde6ff 0%, #eef2ff 100%);
+  background: linear-gradient(135deg, #d4e3f7 0%, #e8f0fa 100%);
   height: 320px;
   display: flex;
   align-items: center;

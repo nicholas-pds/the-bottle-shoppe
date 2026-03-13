@@ -14,7 +14,7 @@
   <!-- ── Navigation ── -->
   <nav class="nav">
     <div class="nav-brand">
-      <img src="images/logo.png" alt="The Bottle Shoppe" height="36" style="border-radius:50%;">
+      <img src="images/logo.png" alt="The Bottle Shoppe" height="44">
       <span class="nav-title">The Bottle Shoppe</span>
     </div>
     <ul class="nav-links">
@@ -24,40 +24,44 @@
     </ul>
   </nav>
 
-  <!-- ── Inventory Header ── -->
-  <header class="inventory-header">
-    <div class="inventory-header-inner">
-      <div>
-        <h1>Our Inventory</h1>
-        <p>Browse our full selection of spirits, wine, and beer.</p>
-      </div>
-      <div class="search-wrap">
-        <span class="search-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </span>
-        <input
-          id="search"
-          class="search-input"
-          type="search"
-          placeholder="Search products…"
-          aria-label="Search inventory"
-          autocomplete="off"
-        >
-      </div>
-    </div>
-  </header>
+  <div class="page-body">
 
-  <!-- ── Product Listings ── -->
-  <main class="section">
-    <div class="section-inner">
-      <div id="inventory-root">
-        <p style="color:#aaa; font-size:0.9rem;">Loading inventory…</p>
+    <!-- ── Coming Soon Hero ── -->
+    <section class="hero" style="min-height: calc(100vh - 64px); display:flex; align-items:center; justify-content:center;">
+      <div class="hero-inner">
+        <img src="images/logo.png" alt="The Bottle Shoppe" height="80" style="margin: 0 auto 32px;">
+        <h1 class="hero-headline">Coming Soon</h1>
+        <p class="hero-tagline">We're stocking our digital shelves.<br>Check back soon or visit us in store.</p>
+
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:40px;">
+          <a href="https://maps.google.com/?q=5660+Co+Rd+19,+Shorewood,+MN+55331" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Visit Us In Store
+          </a>
+          <a href="https://www.doordash.com/convenience/store/the-bottle-shoppe-excelsior-37431785/?utm_campaign=gpa" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+            Order on DoorDash
+          </a>
+        </div>
+
+        <div class="card" style="max-width:340px; margin:0 auto; text-align:left;">
+          <p style="font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:12px;">Store Hours</p>
+          <p style="font-size:0.9rem; color:rgba(255,255,255,0.85); line-height:2;">
+            Mon – Thu: 9am – 9pm<br>
+            Fri – Sat: 9am – 10pm<br>
+            Sun: 11am – 6pm
+          </p>
+        </div>
       </div>
-    </div>
-  </main>
+    </section>
+
+  </div><!-- end .page-body -->
 
   <!-- ── Footer ── -->
   <footer class="footer">
@@ -91,119 +95,6 @@
       <p>Please drink responsibly. Must be 21+ to purchase.</p>
     </div>
   </footer>
-
-  <script>
-    // ── Bottle SVG Placeholder ──────────────────────────────────────────────
-    function bottleSVG() {
-      return `
-        <svg width="64" height="120" viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="26" y="4" width="12" height="14" rx="3" fill="#a8bdee"/>
-          <rect x="24" y="16" width="16" height="4" rx="2" fill="#8aaade"/>
-          <path d="M20 20 C14 30 12 40 12 55 L12 100 C12 108 18 114 32 114 C46 114 52 108 52 100 L52 55 C52 40 50 30 44 20 Z" fill="#b8ccf0"/>
-          <path d="M20 20 C14 30 12 40 12 55 L12 100 C12 108 18 114 32 114 C46 114 52 108 52 100 L52 55 C52 40 50 30 44 20 Z" fill="url(#bottleShine)" opacity="0.4"/>
-          <rect x="18" y="62" width="28" height="22" rx="4" fill="white" opacity="0.7"/>
-          <rect x="21" y="66" width="22" height="3" rx="1.5" fill="#8aaade"/>
-          <rect x="21" y="71" width="16" height="2" rx="1" fill="#a8bdee"/>
-          <rect x="21" y="75" width="19" height="2" rx="1" fill="#a8bdee"/>
-          <defs>
-            <linearGradient id="bottleShine" x1="20" y1="20" x2="52" y2="114" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="white"/>
-              <stop offset="100%" stop-color="transparent"/>
-            </linearGradient>
-          </defs>
-        </svg>`;
-    }
-
-    // ── Render ──────────────────────────────────────────────────────────────
-    let allItems = [];
-
-    function renderInventory(items) {
-      const root = document.getElementById('inventory-root');
-
-      if (!items.length) {
-        root.innerHTML = `
-          <div class="empty-state">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <p>No products match your search.</p>
-          </div>`;
-        return;
-      }
-
-      // Group by category
-      const groups = items.reduce((acc, item) => {
-        (acc[item.category] = acc[item.category] || []).push(item);
-        return acc;
-      }, {});
-
-      root.innerHTML = Object.entries(groups).map(([category, products]) => `
-        <div class="category-section">
-          <h2 class="category-title">${category}</h2>
-          <div class="product-grid">
-            ${products.map(item => `
-              <article class="product-card">
-                <div class="product-img-wrap">
-                  ${item.image
-                    ? `<img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='${bottleSVG().replace(/`/g, '\\`').replace(/"/g, '&quot;')}';">`
-                    : bottleSVG()
-                  }
-                </div>
-                <div class="product-body">
-                  <p class="product-name">${item.name}</p>
-                  <p class="product-size">${item.size}</p>
-                  <div class="product-footer">
-                    <span class="product-price">$${item.price.toFixed(2)}</span>
-                    <span class="badge ${item.inStock ? 'badge-in' : 'badge-out'}">
-                      ${item.inStock
-                        ? `<svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg> In Stock`
-                        : `<svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg> Out of Stock`
-                      }
-                    </span>
-                  </div>
-                </div>
-              </article>
-            `).join('')}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // ── Search Filter ────────────────────────────────────────────────────────
-    document.getElementById('search').addEventListener('input', function () {
-      const q = this.value.trim().toLowerCase();
-      if (!q) {
-        renderInventory(allItems);
-        return;
-      }
-      const filtered = allItems.filter(item =>
-        item.name.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q) ||
-        item.size.toLowerCase().includes(q)
-      );
-      renderInventory(filtered);
-    });
-
-    // ── Fetch Data ───────────────────────────────────────────────────────────
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('inventory.json')
-        .then(res => {
-          if (!res.ok) throw new Error('Network response was not ok');
-          return res.json();
-        })
-        .then(data => {
-          allItems = data;
-          renderInventory(allItems);
-        })
-        .catch(err => {
-          document.getElementById('inventory-root').innerHTML = `
-            <div class="empty-state">
-              <p>Unable to load inventory. Please try again later.</p>
-            </div>`;
-          console.error('Failed to load inventory.json:', err);
-        });
-    });
-  </script>
 
 </body>
 </html>
