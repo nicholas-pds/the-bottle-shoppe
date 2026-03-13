@@ -113,10 +113,6 @@ img {
   gap: 8px;
 }
 
-.nav-logo {
-  mix-blend-mode: multiply;
-}
-
 .nav-links a {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
