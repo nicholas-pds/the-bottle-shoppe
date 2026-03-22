@@ -848,3 +848,56 @@ img {
   .nav-social .icon-btn { width: 36px; height: 36px; }
   .nav-social-label { display: none; }
 }
+
+/* ── Brands Page Header ── */
+.brands-header {
+  background:
+    linear-gradient(135deg, rgba(27,63,110,0.88) 0%, rgba(45,95,154,0.78) 100%),
+    url('images/storefront.png') center / cover no-repeat;
+  padding: calc(var(--section-pad) + 80px) 24px var(--section-pad);
+  text-align: center;
+  color: var(--white);
+}
+.brands-header-inner { max-width: 680px; margin: 0 auto; animation: heroFadeIn 0.8s ease both; }
+.brands-header h1 { font-weight: 700; font-size: clamp(2rem,5vw,3.25rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.brands-header p { font-weight: 300; font-size: clamp(1rem,2.5vw,1.2rem); color: rgba(255,255,255,0.82); }
+
+/* ── Brand Category ── */
+.brands-category { margin-bottom: 64px; }
+.brands-category:last-child { margin-bottom: 0; }
+.brands-category-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.brands-category-title { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; color: #1a1a2e; white-space: nowrap; }
+.brands-category-rule { flex: 1; height: 2px; background: rgba(27,63,110,0.1); border-radius: 2px; }
+.brands-category-count { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); background: rgba(27,63,110,0.08); padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+/* ── Brand Grid ── */
+.brand-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+@media (max-width: 900px) { .brand-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 600px) { .brand-grid { grid-template-columns: repeat(2,1fr); gap: 14px; } }
+
+/* ── Brand Card ── */
+.brand-card { background: rgba(255,255,255,0.95); border: 1px solid rgba(27,63,110,0.09); border-radius: var(--card-radius); padding: 20px 16px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: var(--transition); }
+.brand-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(27,63,110,0.12); border-color: rgba(27,63,110,0.18); }
+.brand-logo-wrap { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
+.brand-logo-wrap img { width: 80px; height: 80px; object-fit: contain; border-radius: 12px; }
+.brand-logo-fallback { display: none; width: 80px; height: 80px; background: linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%); border-radius: 12px; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; color: var(--white); text-align: center; padding: 8px; }
+.brand-name { font-weight: 600; font-size: 0.8rem; color: #1a1a2e; text-align: center; line-height: 1.3; }
+
+/* ── Floating Order Widget ── */
+.order-widget { position: fixed; bottom: 28px; right: 24px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.order-widget-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: #FF3008; color: #fff; border: none; border-radius: var(--pill-radius); font-family: 'Poppins',sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em; cursor: pointer; box-shadow: 0 6px 24px rgba(255,48,8,0.45); transition: transform 0.2s ease, box-shadow 0.2s ease; white-space: nowrap; }
+.order-widget-btn:hover { transform: scale(1.05); box-shadow: 0 10px 32px rgba(255,48,8,0.55); }
+.order-widget-popup { background: var(--white); border-radius: var(--card-radius); padding: 24px; width: 280px; box-shadow: 0 20px 60px rgba(27,63,110,0.2),0 4px 16px rgba(0,0,0,0.08); border: 1px solid rgba(27,63,110,0.08); opacity: 0; transform: translateY(12px) scale(0.97); pointer-events: none; transition: opacity 0.22s ease, transform 0.22s ease; }
+.order-widget-popup.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.order-widget-popup-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.order-widget-popup-headline { font-weight: 700; font-size: 1rem; color: #1a1a2e; line-height: 1.3; padding-right: 8px; }
+.order-widget-close { background: none; border: none; cursor: pointer; color: #aaa; padding: 2px; line-height: 1; flex-shrink: 0; transition: color 0.15s ease; }
+.order-widget-close:hover { color: #555; }
+.order-widget-popup-copy { font-size: 0.85rem; font-weight: 300; color: #666; line-height: 1.6; margin-bottom: 18px; }
+.order-widget-doordash-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; background: #FF3008; color: #fff; border: none; border-radius: var(--pill-radius); font-family: 'Poppins',sans-serif; font-weight: 600; font-size: 0.9rem; cursor: pointer; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; }
+.order-widget-doordash-btn:hover { background: #e02b07; transform: scale(1.02); }
+@media (max-width: 480px) {
+  .order-widget { bottom: 20px; right: 16px; }
+  .order-widget-popup { width: calc(100vw - 32px); max-width: 320px; }
+  .order-widget-btn { padding: 13px 18px; font-size: 0.85rem; }
+}
